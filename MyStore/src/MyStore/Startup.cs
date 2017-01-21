@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using MyStore.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MyStore
 {
@@ -18,14 +19,24 @@ namespace MyStore
         {
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json").Build();
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true)
+                .Build();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration["Data:MyStoreProducts:ConnectionString"]));
+                    Configuration["Data:SportStoreProducts:ConnectionString"]));
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration["Data:SportStoreIdentity:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
+
             services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -39,18 +50,41 @@ namespace MyStore
                 IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
 
-
-            app.UseRequestLocalization(new RequestLocalizationOptions
+            if (env.IsDevelopment())
             {
-                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-US")
+                app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
+            app.UseStaticFiles();
+            app.UseSession();
+            app.UseIdentity();
+            app.UseGoogleAuthentication(new GoogleOptions
+            {
+                ClientId = "<enter client id here>",
+                ClientSecret = "<enter client secret here>"
             });
 
 
-            app.UseDeveloperExceptionPage();
-            app.UseStatusCodePages();
-            app.UseStaticFiles();
-            app.UseSession();
+            //app.UseTwitterAuthentication(
+            //   consumerKey: ConfigurationManager.AppSettings["consumerKey"],
+            //   consumerSecret: ConfigurationManager.AppSettings["consumerSecret"]);
+
+            app.UseFacebookAuthentication(new FacebookOptions
+            {
+                AppId = Configuration["Authentication:Facebook:AppId1"],
+                AppSecret = Configuration["Authentication:Facebook:AppSecret1"],
+                
+
+            });
             app.UseMvc(routes => {
+                routes.MapRoute(name: "Error", template: "Error",
+                    defaults: new { controller = "Error", action = "Error" });
+
                 routes.MapRoute(
                     name: null,
                     template: "{category}/Page{page:int}",
@@ -76,7 +110,10 @@ namespace MyStore
 
                 routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
             });
+
             SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
+
         }
 
     }

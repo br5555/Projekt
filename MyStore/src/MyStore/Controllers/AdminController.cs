@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyStore.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyStore.Controllers
 {
 
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;

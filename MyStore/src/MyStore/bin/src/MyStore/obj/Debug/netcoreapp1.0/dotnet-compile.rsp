@@ -14,9 +14,16 @@
 --informational-version:1.0.0
 --target-framework:.NETCoreApp,Version=v1.0
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Cookies.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication.Facebook\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Facebook.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication.Google\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Google.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication.OAuth\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.OAuth.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authentication.Twitter\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Twitter.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Cryptography.Internal\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cryptography.Internal.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Cryptography.KeyDerivation\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.DataProtection\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.DataProtection.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Diagnostics\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.dll
@@ -30,6 +37,8 @@
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Http.Extensions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Http.Extensions.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Http.Features\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Http.Features.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.HttpOverrides\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.HttpOverrides.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Identity\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Identity.dll
+--reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Identity.EntityFrameworkCore\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.JsonPatch\1.0.0\lib\netstandard1.1\Microsoft.AspNetCore.JsonPatch.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Localization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Localization.dll
 --reference:C:\Users\Branko\.nuget\packages\Microsoft.AspNetCore.Mvc\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.dll
@@ -203,9 +212,13 @@ C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Progra
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Startup.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Components\CartSummaryViewComponent.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Components\NavigationMenuViewComponent.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\AccountController.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\AdminController.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\CartController.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\ErrorController.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\OrderController.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Controllers\ProductController.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Infrastructure\CustomUserValidator.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Infrastructure\PageLinkTagHelper.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Infrastructure\SessionExtensions.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Infrastructure\UrlExtensions.cs
@@ -221,12 +234,17 @@ C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrat
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170121013804_Orders.Designer.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170121122357_ShippedOrders.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170121122357_ShippedOrders.Designer.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170121235208_Oppp.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170121235208_Oppp.Designer.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\AppIdentityDbContext.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ApplicationDbContext.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\AppUser.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\Cart.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\EFOrderRepository.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\EFProductRepository.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\FakeProductRepository.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\IdentitySeedData.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\IOrderRepository.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\IProductRepository.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\Order.cs
@@ -234,5 +252,6 @@ C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\SeedData.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\SessionCart.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ViewModels\CartIndexViewModel.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ViewModels\LoginModel.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ViewModels\PagingInfo.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ViewModels\ProductsListViewModel.cs
