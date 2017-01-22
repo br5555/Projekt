@@ -8,8 +8,8 @@ using MyStore.Models;
 namespace MyStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170120232802_Drugi")]
-    partial class Drugi
+    [Migration("20170122105207_Initiall")]
+    partial class Initiall
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,6 +60,8 @@ namespace MyStore.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<bool>("Shipped");
+
                     b.Property<string>("State")
                         .IsRequired();
 
@@ -75,11 +77,14 @@ namespace MyStore.Migrations
                     b.Property<int>("ProductID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Category");
+                    b.Property<string>("Category")
+                        .IsRequired();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<decimal>("Price");
 

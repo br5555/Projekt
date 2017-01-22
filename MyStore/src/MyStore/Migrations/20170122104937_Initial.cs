@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MyStore.Migrations
 {
-    public partial class Drugi : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,12 +22,29 @@ namespace MyStore.Migrations
                     Line2 = table.Column<string>(nullable: true),
                     Line3 = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: false),
+                    Shipped = table.Column<bool>(nullable: false),
                     State = table.Column<string>(nullable: false),
                     Zip = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.OrderID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ProductID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Category = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Price = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ProductID);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,6 +92,9 @@ namespace MyStore.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }

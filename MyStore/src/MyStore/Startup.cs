@@ -28,11 +28,11 @@ namespace MyStore
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration["Data:SportStoreProducts:ConnectionString"]));
+                    Configuration["Data:MyStoreProducts:ConnectionString"]));
 
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration["Data:SportStoreIdentity:ConnectionString"]));
+                    Configuration["Data:MyStoreIdentity:ConnectionString"]));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
@@ -63,24 +63,24 @@ namespace MyStore
             app.UseStaticFiles();
             app.UseSession();
             app.UseIdentity();
-            app.UseGoogleAuthentication(new GoogleOptions
-            {
-                ClientId = "<enter client id here>",
-                ClientSecret = "<enter client secret here>"
-            });
+            //app.UseGoogleAuthentication(new GoogleOptions
+            //{
+            //    ClientId = "<enter client id here>",
+            //    ClientSecret = "<enter client secret here>"
+            //});
 
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: ConfigurationManager.AppSettings["consumerKey"],
-            //   consumerSecret: ConfigurationManager.AppSettings["consumerSecret"]);
+            ////app.UseTwitterAuthentication(
+            ////   consumerKey: ConfigurationManager.AppSettings["consumerKey"],
+            ////   consumerSecret: ConfigurationManager.AppSettings["consumerSecret"]);
 
-            app.UseFacebookAuthentication(new FacebookOptions
-            {
-                AppId = Configuration["Authentication:Facebook:AppId1"],
-                AppSecret = Configuration["Authentication:Facebook:AppSecret1"],
+            //app.UseFacebookAuthentication(new FacebookOptions
+            //{
+            //    AppId = Configuration["Authentication:Facebook:AppId1"],
+            //    AppSecret = Configuration["Authentication:Facebook:AppSecret1"],
                 
 
-            });
+            //});
             app.UseMvc(routes => {
                 routes.MapRoute(name: "Error", template: "Error",
                     defaults: new { controller = "Error", action = "Error" });

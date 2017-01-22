@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyStore.Migrations
 {
-    public partial class Initial1 : Migration
+    public partial class Initiall : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
