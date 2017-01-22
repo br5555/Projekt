@@ -226,9 +226,15 @@ C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrat
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122104937_Initial.Designer.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122105207_Initiall.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122105207_Initiall.Designer.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122110756_Initial1.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122110756_Initial1.Designer.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122111305_Initial2.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\20170122111305_Initial2.Designer.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\AppIdentityDb\20170122105313_InitialI.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\AppIdentityDb\20170122105313_InitialI.Designer.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\AppIdentityDb\20170122111348_InitialI1.cs
+C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\AppIdentityDb\20170122111348_InitialI1.Designer.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Migrations\AppIdentityDb\AppIdentityDbContextModelSnapshot.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\AppIdentityDbContext.cs
 C:\Users\Branko\Documents\Visual Studio 2015\Projects\MyStore\src\MyStore\Models\ApplicationDbContext.cs

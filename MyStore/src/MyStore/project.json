@@ -24,7 +24,6 @@
     "Microsoft.AspNetCore.Authentication.Google": "1.0.0",
     "Microsoft.AspNetCore.Authentication.Facebook": "1.0.0",
     "Microsoft.AspNetCore.Authentication.Twitter": "1.0.0",
-    
     "Microsoft.AspNetCore.Authentication.OAuth": "1.0.0"
   },
 

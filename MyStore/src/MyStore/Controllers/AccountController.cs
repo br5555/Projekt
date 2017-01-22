@@ -56,98 +56,104 @@ namespace MyStore.Controllers
             return View(loginModel);
         }
 
-        //[AllowAnonymous]
-        //public IActionResult GoogleLogin(string returnUrl)
-        //{
-        //    string redirectUrl = Url.Action("GoogleResponse", "Account",
-        //        new { ReturnUrl = returnUrl });
-        //    AuthenticationProperties properties = signInManager
-        //        .ConfigureExternalAuthenticationProperties("Google", redirectUrl);
-        //    return new ChallengeResult("Google", properties);
-        //}
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
-        //[AllowAnonymous]
-        //public async Task<IActionResult> GoogleResponse(string returnUrl = "/")
-        //{
-        //    ExternalLoginInfo info = await signInManager.GetExternalLoginInfoAsync();
-        //    if (info == null)
-        //    {
-        //        return RedirectToAction(nameof(Login));
-        //    }
-        //    var result = await signInManager.ExternalLoginSignInAsync(
-        //        info.LoginProvider, info.ProviderKey, false);
-        //    if (result.Succeeded)
-        //    {
-        //        return Redirect(returnUrl);
-        //    }
-        //    else
-        //    {
-        //        AppUser user = new AppUser
-        //        {
-        //            Email = info.Principal.FindFirst(ClaimTypes.Email).Value,
-        //            UserName =
-        //                info.Principal.FindFirst(ClaimTypes.Email).Value
-        //        };
-        //        IdentityResult identResult = await userManager.CreateAsync(user);
-        //        if (identResult.Succeeded)
-        //        {
-        //            identResult = await userManager.AddLoginAsync(user, info);
-        //            if (identResult.Succeeded)
-        //            {
-        //                await signInManager.SignInAsync(user, false);
-        //                return Redirect(returnUrl);
-        //            }
-        //        }
-        //        return AccessDenied();
-        //    }
-        //}
+        [AllowAnonymous]
+        public IActionResult GoogleLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("GoogleResponse", "Account",
+                new { ReturnUrl = returnUrl });
+            AuthenticationProperties properties = signInManager
+                .ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return new ChallengeResult("Google", properties);
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> GoogleResponse(string returnUrl = "/")
+        {
+            ExternalLoginInfo info = await signInManager.GetExternalLoginInfoAsync();
+            if (info == null)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+            var result = await signInManager.ExternalLoginSignInAsync(
+                info.LoginProvider, info.ProviderKey, false);
+            if (result.Succeeded)
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                AppUser user = new AppUser
+                {
+                    Email = info.Principal.FindFirst(ClaimTypes.Email).Value,
+                    UserName =
+                        info.Principal.FindFirst(ClaimTypes.Email).Value
+                };
+                IdentityResult identResult = await userManager.CreateAsync(user);
+                if (identResult.Succeeded)
+                {
+                    identResult = await userManager.AddLoginAsync(user, info);
+                    if (identResult.Succeeded)
+                    {
+                        await signInManager.SignInAsync(user, false);
+                        return Redirect(returnUrl);
+                    }
+                }
+                return AccessDenied();
+            }
+        }
 
 
-        //[AllowAnonymous]
-        //public IActionResult FacebookLogin(string returnUrl)
-        //{
-        //    string redirectUrl = Url.Action("FacebookResponse", "Account",
-        //        new { ReturnUrl = returnUrl });
-        //    AuthenticationProperties properties = signInManager
-        //        .ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
-        //    return new ChallengeResult("Facebook", properties);
-        //}
+        [AllowAnonymous]
+        public IActionResult FacebookLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("FacebookResponse", "Account",
+                new { ReturnUrl = returnUrl });
+            AuthenticationProperties properties = signInManager
+                .ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
+            return new ChallengeResult("Facebook", properties);
+        }
 
-        //[AllowAnonymous]
-        //public async Task<IActionResult> FacebookResponse(string returnUrl = "/")
-        //{
-        //    ExternalLoginInfo info = await signInManager.GetExternalLoginInfoAsync();
-        //    if (info == null)
-        //    {
-        //        return RedirectToAction(nameof(Login));
-        //    }
-        //    var result = await signInManager.ExternalLoginSignInAsync(
-        //        info.LoginProvider, info.ProviderKey, false);
-        //    if (result.Succeeded)
-        //    {
-        //        return Redirect(returnUrl);
-        //    }
-        //    else
-        //    {
-        //        AppUser user = new AppUser
-        //        {
-        //            Email = info.Principal.FindFirst(ClaimTypes.Email).Value,
-        //            UserName =
-        //                info.Principal.FindFirst(ClaimTypes.Email).Value
-        //        };
-        //        IdentityResult identResult = await userManager.CreateAsync(user);
-        //        if (identResult.Succeeded)
-        //        {
-        //            identResult = await userManager.AddLoginAsync(user, info);
-        //            if (identResult.Succeeded)
-        //            {
-        //                await signInManager.SignInAsync(user, false);
-        //                return Redirect(returnUrl);
-        //            }
-        //        }
-        //        return AccessDenied();
-        //    }
-        //}
+        [AllowAnonymous]
+        public async Task<IActionResult> FacebookResponse(string returnUrl = "/")
+        {
+            ExternalLoginInfo info = await signInManager.GetExternalLoginInfoAsync();
+            if (info == null)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+            var result = await signInManager.ExternalLoginSignInAsync(
+                info.LoginProvider, info.ProviderKey, false);
+            if (result.Succeeded)
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                AppUser user = new AppUser
+                {
+                    Email = info.Principal.FindFirst(ClaimTypes.Email).Value,
+                    UserName =
+                        info.Principal.FindFirst(ClaimTypes.Email).Value
+                };
+                IdentityResult identResult = await userManager.CreateAsync(user);
+                if (identResult.Succeeded)
+                {
+                    identResult = await userManager.AddLoginAsync(user, info);
+                    if (identResult.Succeeded)
+                    {
+                        await signInManager.SignInAsync(user, false);
+                        return Redirect(returnUrl);
+                    }
+                }
+                return AccessDenied();
+            }
+        }
 
         //[AllowAnonymous]
         //public IActionResult TwitterLogin(string returnUrl)
