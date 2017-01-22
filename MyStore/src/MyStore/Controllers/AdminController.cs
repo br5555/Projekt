@@ -38,7 +38,7 @@ namespace MyStore.Controllers
             }
         }
 
-        public ViewResult Create() => View("Edit", new Product());
+        public ViewResult Create() => View("Create", new Product());
 
         [HttpPost]
         public IActionResult Delete(int productId)
